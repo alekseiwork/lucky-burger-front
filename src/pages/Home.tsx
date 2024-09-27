@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Home() {
   return (
@@ -27,11 +27,11 @@ function Home() {
             Best burgers in town. Check out our menu and place your order!
           </p>
           <div className="flex justify-center">
-            <Link to="/menu" className="inline-block">
+            <NavLink to="/menu" className="inline-block">
               <button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-500 text-xl font-semibold uppercase tracking-wider fontse">
                 Menu
               </button>
-            </Link>
+            </NavLink>
           </div>
         </main>
         <Footer />
