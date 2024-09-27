@@ -97,7 +97,10 @@ function Menu() {
         >
           <div className="absolute inset-0 bg-black opacity-70"></div>
         </div>
-        <p className="text-center text-yellow-400 relative">Loading menu...</p>;
+        <div className="min-h-screen relative">
+          <p className="text-center text-yellow-400">Loading menu...</p>
+        </div>
+        ;
       </div>
     );
   }
