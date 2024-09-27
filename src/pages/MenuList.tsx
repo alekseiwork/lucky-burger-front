@@ -66,7 +66,7 @@ function MenuList() {
           },
         }
       );
-      console.log(`Menu item with ID: ${item._id} has been deleted`);
+      // console.log(`Menu item with ID: ${item._id} has been deleted`);
 
       // Обновляем состояние, удаляя удалённый элемент
       setMenuItems((prevItems) =>
