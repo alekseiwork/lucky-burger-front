@@ -84,7 +84,22 @@ function Menu() {
   const isButtonDisabled = selectedItems.length === 0;
 
   if (loading) {
-    return <p className="text-center text-yellow-400">Loading menu...</p>;
+    return (
+      <div className="relative min-h-screen">
+        <div
+          className="absolute z-0 inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/background.jpg')",
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-70"></div>
+        </div>
+        <p className="text-center text-yellow-400 relative">Loading menu...</p>;
+      </div>
+    );
   }
 
   if (error) {
