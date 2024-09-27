@@ -59,7 +59,7 @@ function MenuList() {
       const token = localStorage.getItem('token');
       // Отправляем запрос на удаление с ID элемента
       await axios.delete(
-        `https://alternative-corry-greencat-43a4eefc.koyeb.app/menu/${item._id}`,
+        `https://alternative-corry-greencat-43a4eefc.koyeb.app/api/menu/${item._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Add Authorization header
