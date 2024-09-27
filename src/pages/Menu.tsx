@@ -98,6 +98,7 @@ function Menu() {
           <div className="absolute inset-0 bg-black opacity-70"></div>
         </div>
         <div className="min-h-screen relative">
+          <Header />
           <p className="text-center text-yellow-400">Loading menu...</p>
         </div>
         ;
