@@ -41,7 +41,7 @@ function Order() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/orders',
+        'https://alternative-corry-greencat-43a4eefc.koyeb.app/api/orders',
         orderData,
         {
           headers: {

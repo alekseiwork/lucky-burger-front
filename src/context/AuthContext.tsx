@@ -27,11 +27,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('loginTime', String(loginTime));
     setIsAuthenticated(true);
 
-    // Set a timer to log out after 10 minutes (600000 ms)
+    // Set a timer to log out after 10 minutes (3600000 ms)
     clearTimeout(logoutTimerRef.current);
     logoutTimerRef.current = setTimeout(() => {
       logout();
-    }, 600000);
+    }, 3600000);
   };
 
   const logout = useCallback(() => {
@@ -47,11 +47,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const loginTime = localStorage.getItem('loginTime');
     if (token && loginTime) {
       const timeElapsed = Date.now() - Number(loginTime);
-      if (timeElapsed < 600000) {
+      if (timeElapsed < 3600000) {
         setIsAuthenticated(true);
         logoutTimerRef.current = setTimeout(() => {
           logout();
-        }, 600000 - timeElapsed);
+        }, 3600000 - timeElapsed);
       } else {
         logout();
       }

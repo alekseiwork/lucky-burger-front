@@ -22,7 +22,9 @@ function MenuList() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/menu');
+        const response = await axios.get(
+          'https://alternative-corry-greencat-43a4eefc.koyeb.app/api/menu'
+        );
         setMenuItems(response.data);
         setLoading(false);
         const uniqueCategories: string[] = [
@@ -56,11 +58,14 @@ function MenuList() {
     try {
       const token = localStorage.getItem('token');
       // Отправляем запрос на удаление с ID элемента
-      await axios.delete(`http://localhost:5000/api/menu/${item._id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`, // Add Authorization header
-        },
-      });
+      await axios.delete(
+        `https://alternative-corry-greencat-43a4eefc.koyeb.app/menu/${item._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Add Authorization header
+          },
+        }
+      );
       console.log(`Menu item with ID: ${item._id} has been deleted`);
 
       // Обновляем состояние, удаляя удалённый элемент

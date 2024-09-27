@@ -15,7 +15,7 @@ function Register() {
       const token = localStorage.getItem('token');
 
       const response = await axios.post(
-        'http://localhost:5000/api/admin/register',
+        'https://alternative-corry-greencat-43a4eefc.koyeb.app/api/admin/register',
         {
           username,
           password,

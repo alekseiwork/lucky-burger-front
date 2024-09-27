@@ -23,7 +23,7 @@ function AddMenuItem() {
       const token = localStorage.getItem('token'); // Get the token from localStorage
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const response = await axios.post(
-        'http://localhost:5000/api/menu',
+        'https://alternative-corry-greencat-43a4eefc.koyeb.app/api/menu',
         {
           name,
           nameRU,

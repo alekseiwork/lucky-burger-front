@@ -18,7 +18,7 @@ interface IOrder {
   status: string;
 }
 
-const socket = io('http://localhost:5000'); // Connecting to the server via Socket.io
+const socket = io('https://alternative-corry-greencat-43a4eefc.koyeb.app'); // Connecting to the server via Socket.io
 
 function TrackOrders() {
   const [orders, setOrders] = useState<IOrder[]>([]);
@@ -28,11 +28,14 @@ function TrackOrders() {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/orders', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          'https://alternative-corry-greencat-43a4eefc.koyeb.app/api/orders',
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setOrders(response.data);
       } catch (err: unknown) {
         setError('Failed to fetch orders.');
@@ -61,7 +64,7 @@ function TrackOrders() {
         orderToUpdate?.status === 'completed' ? 'pending' : 'completed';
 
       await axios.patch(
-        `http://localhost:5000/api/orders/${orderId}`,
+        `https://alternative-corry-greencat-43a4eefc.koyeb.app/api/orders/${orderId}`,
         {
           status: newStatus,
         },
@@ -87,11 +90,14 @@ function TrackOrders() {
     try {
       const token = localStorage.getItem('token');
 
-      await axios.delete(`http://localhost:5000/api/orders/${orderId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(
+        `https://alternative-corry-greencat-43a4eefc.koyeb.app/api/orders/${orderId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       setOrders((prevOrders) =>
         prevOrders.filter((order) => order._id !== orderId)

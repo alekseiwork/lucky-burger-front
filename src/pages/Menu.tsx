@@ -28,7 +28,9 @@ function Menu() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/menu');
+        const response = await axios.get(
+          'https://alternative-corry-greencat-43a4eefc.koyeb.app/api/menu'
+        );
         setMenuItems(response.data);
         setLoading(false);
         const uniqueCategories: string[] = [
