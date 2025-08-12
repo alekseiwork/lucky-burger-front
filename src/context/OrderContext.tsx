@@ -39,7 +39,6 @@ export const OrderProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  // Method to clear all items from the cart
   const clearItems = () => {
     setSelectedItems([]);
   };
