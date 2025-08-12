@@ -10,7 +10,7 @@ function Header({ currentPath }: { currentPath?: string }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50); // Устанавливаем порог для изменения прозрачности
+      setIsScrolled(scrollTop > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
