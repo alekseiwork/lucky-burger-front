@@ -9,7 +9,7 @@ import React, {
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  isLoading: boolean; // Added loading state
+  isLoading: boolean; 
   login: (token: string) => void;
   logout: () => void;
 }
@@ -18,7 +18,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true); // Start with loading
+  const [isLoading, setIsLoading] = useState<boolean>(true); 
   const logoutTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const login = (token: string) => {
@@ -27,7 +27,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('loginTime', String(loginTime));
     setIsAuthenticated(true);
 
-    // Set a timer to log out after 10 minutes (3600000 ms)
     clearTimeout(logoutTimerRef.current);
     logoutTimerRef.current = setTimeout(() => {
       logout();
@@ -57,7 +56,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     }
 
-    setIsLoading(false); // Set loading state to false after the check
+    setIsLoading(false); 
 
     return () => {
       clearTimeout(logoutTimerRef.current);
